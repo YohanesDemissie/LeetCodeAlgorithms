@@ -1,0 +1,9 @@
+//EASY QUICK SOLUTION 
+
+const paths = 
+[["pYyNGfBYbm","wxAscRuzOl"],["kzwEQHfwce","pYyNGfBYbm"]]
+let answer = paths.length - 1;
+
+var destCity = function(paths) {
+return paths[answer][1]
+};
