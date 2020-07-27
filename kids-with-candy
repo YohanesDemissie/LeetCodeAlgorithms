@@ -1,0 +1,25 @@
+let extraCandies = 3
+let candies = [2,3,5,1,3];
+let answers = [];
+
+const kidsWithCandies = function(candies, extraCandies) {
+    //get the highest number from array first using array method Math.max and spread operator
+    let diff = Math.max(...candies);
+    for( i = 0; i < candies.length; i++) {
+    
+        //create a variable to compare current index to extra candies
+        let compare = candies[i] += extraCandies
+        
+        //test data
+        console.log(compare, diff)
+        
+        //final conditional statememnt comparing data
+        if(compare >= diff) {
+            answers.push('true')
+        } else if (compare <= diff) {
+            answers.push('false')
+            } 
+            
+        } 
+    return answers;
+};
