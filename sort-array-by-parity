@@ -1,0 +1,88 @@
+/**
+ * @param {number[]} A
+ * @return {number[]}
+ */
+//CHALLENGE:
+//Given an array A of non-negative integers, return an array consisting of all the even elements of A, followed by all the odd elements of A.
+
+//Pseudocode:
+//test input
+//pass in array to the function
+//create logic to return all even numbers in the beginning of the numbers
+//return all odds at the end of the array
+//test output
+//return final array/output
+
+//given:
+//all non-negative numbers
+//return any answer array tnat satisfies the condition
+
+//edge cases
+//does the array exist
+//is the array empty
+// are these numbers passed as strings or integers
+
+///BRUTE FORCE APPROACH
+let even = [];
+let odd = [];
+let final = [];
+var sortArrayByParity = function(A) {
+    switch(A) {
+            //TESTING IF INPUT EXISTS
+        case  undefined || null:
+            console.log('Array DOES NOT EXIST');
+            break;
+            //TESTING IF ARRAY IS EMPTY
+        case "":
+            console.log('ARRAY IS EMPTY')
+            //TESTING INPUT TYPE
+        case !NaN:
+            console.log('INPUTS ARE STRINGS AND NEED TO BE CONVERTED TO INTEGERS');
+            break;
+            //if all edge cases fail proceed to logic
+        case (A):
+            for(let i = 0; i < A.length; i++) {
+                //Checking input for non-dynamic algorithm
+                if(A[i] % 2 == 0) {
+                    even.push(A[i])
+                    console.log(even, 'EVEN');
+                    
+                } else if(A[i] % 2 !== 0) {
+                    odd.push(A[i])
+                    console.log(odd, 'ODD');
+                }
+                // final.push(even, odd)
+                // console.log(final, 'ANSWER');
+            }
+            break;
+    }
+    
+    for (let j = 0; j < even.length; j++) {
+        final.push(even[j])
+        console.log(even)
+    }
+    for(let k = 0; k < odd.length; k++) {
+        final.push(odd[k]);
+        console.log(final)
+    }
+    return final
+};
+
+//EASIER APPROACH
+let final = [];
+var sortArrayByParity = function(A) {
+            for(let i = 0; i < A.length; i++) {
+                //Checking input for non-dynamic algorithm
+                if(A[i] % 2 !== 0 && A[i] !== 0) {
+                  final.push(A[i]);
+                  console.log(A, 'EVENS')
+                } 
+                else if(A[i] % 2 == 0 || A[i] == 0) {
+                    final.unshift(A[i])
+                    console.log(final, 'ODD');
+                }
+                console.log(final, 'ANSWER');
+            }
+           
+    return final
+};
