@@ -1,0 +1,56 @@
+Given an integer (signed 32 bits), write a function to check whether it is a power of 4.
+Example 1:
+Input: 16
+Output: true
+Example 2:
+Input: 5
+Output: false
+
+const isPowerOfFour = function(num) {
+    if (num <= 0) {
+        return false
+    }
+    if(num === 2) {
+        return false
+    }
+    if(num === 3) {
+        return false
+    }
+    if(num === 1){
+        return true
+    }
+    let numbers = []
+    let ternary;
+    if(num >= 4) {
+      for(let i = 4; i <= num; i *= 4) {
+        numbers.push(i)
+          console.log(i);
+          let compare = numbers.length - 1;
+          ternary = numbers[compare] === num ? true : false;
+      } 
+    } return ternary
+
+};
+
+//Cleaner approach
+var isPowerOfFour = function(num) {
+    if (num <= 0 || num === 2 || num === 3) {
+        return false
+    }
+    
+    if(num === 1){
+        return true
+    }
+    
+    let numbers = [];
+    let ternary;
+    if(num >= 4) {
+      for(let i = 4; i <= num; i *= 4) {
+        numbers.push(i)
+      } 
+    } 
+     
+    return (numbers[numbers.length - 1] === num ? true : false);
+};
+
+//BIG O NOTATION O(n) Linear
