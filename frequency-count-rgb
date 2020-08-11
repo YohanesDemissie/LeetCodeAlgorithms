@@ -1,0 +1,36 @@
+// Given a string of characters where each character is either 'r', 'g', or 'b',
+//    * determine the number of complete sets of 'rgb' that can be made with the
+//    * characters.
+// Examples
+//    * `'rgbrgb' --> 2`
+//    * `'rbgrbrgrgbgrrggbbbbrgrgrgrg' --> 7`
+//    * `'bbrr' --> 0`
+
+//sample input below to test for final dynamic solution
+let rgb = ['r', 'g', 'b'];
+
+function colorSets(rgb) {
+  let i = 0;
+  let r = 0;
+  let g = 0;
+  let b = 0;
+  for(let i = 0; i < rgb.length; i++) {
+    if(rgb[i] === 'r') {
+      r += 1;
+    }
+    if(rgb[i] === 'g') {
+      g +=1;
+    }
+    if(rgb[i] === 'b') {
+      b += 1;
+    }
+  }
+  if( r === 0 || g === 0 || b === 0) {
+    return 0
+  } else if(r === g && g === b && b === r) {
+    return r
+  } else  return Math.min(r ,g, b);
+}
+
+//Only way to optimize this solution is to place conditional statement of array to be empty. Concluding in a constant 0(1) uppward bound.
+//This solution iterates through entire array and the return is less than the input, making this solution conclude in a time & space complexity, a linear 0(n) uppward bound and a 0(1) lower bound if array is empty.
