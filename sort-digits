@@ -1,0 +1,39 @@
+/**
+   * Sort Digits
+   *
+   * Given an integer, sort the digits in ascending order and return the new integer.
+   * Ignore leading zeros.
+   *
+   * Parameters
+   * Input: num {Integer}
+   * Output: {Integer}
+   *
+   * Constraints
+   * Do not convert the integer into a string or other data type.
+   *
+   * Time: O(N) where N is the number of digits.
+   * Space: O(1)
+   *
+   * Examples
+   * 8970 --> 789
+   * 32445 --> 23445
+   * 10101 --> 111
+   */
+   
+const nums = [403103450];
+
+function  fixIt(nums) {
+  let i = 1;
+  let nums2;
+  while(i <= nums) {
+    i *= 10;
+    nums2 = nums % i
+  }
+  let final = nums2.toString().split('').sort((a, b) => a-b);
+  while (final[0] == 0) {
+    final.splice(0, 1)
+  }
+  return final
+}
+
+// Time complexity linear O(n). 
