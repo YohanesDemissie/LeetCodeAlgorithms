@@ -29,7 +29,7 @@ var reverse = function(x) {
     let joined = split.join('');
     for(let i = 0; i < split.length; i++) {
         if(split[i] === '-') {
-        let final = split.splice(i, 1);
+        split.splice(i, 1);
         }
     }
     
@@ -40,5 +40,6 @@ var reverse = function(x) {
         return x > 0 ?  parseInt(answer) : parseInt(-Math.abs(answer))
     }
 };
+
 
 // This is a linear solution with a time and space complexity of 0(n)
