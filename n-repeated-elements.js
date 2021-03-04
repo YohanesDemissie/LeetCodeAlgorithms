@@ -17,11 +17,27 @@ Input: [5,1,5,2,5,3,5,4]
 Output: 5
 */
 
+//array solution
 var repeatedNTimes = function(A) {
     const pool = A.sort();
     for(let i = 0; i < pool.length; i++){
         if(pool[i] == pool[i + 1]){
             return pool[i]
+        }
+    }
+};
+
+//object oriented solution
+var repeatedNTimes = function (A) {
+    let letterMap = new Map();
+    console.log(letterMap, 'MAP');
+    for (let elem of A) {
+        console.log(elem, 'ELEM')
+        if (letterMap.has(elem)) {
+                return elem;
+                break;
+        } else {
+            letterMap.set(elem, 1);
         }
     }
 };
